@@ -1,0 +1,243 @@
+/* --- Base Elements --- */
+body {
+  background-color: #FEF3E2;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+               'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* animation: fadeInPage 0.8s ease-in-out; */
+  background-color: #fef1df; /* (overrides above, consider picking one) */
+}
+
+h1 {
+  position: fixed;
+  top: 20px;
+  right: 700px;
+  color: #3282B8;
+  font-size: 40px;
+}
+
+h2 {
+  position: fixed;
+  left: 500px;
+  top: 150px;
+  color: black;
+}
+
+/* --- Input fields --- */
+input {
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+input:hover,
+input:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* --- Button styles --- */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #030405 !important;
+}
+
+/* --- Hover effect for specific classes --- */
+.year, .num, .data, .amimp {
+  background-color: #B6CBBD;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  justify-content: center;
+  position: fixed;
+  transition: border 0.2s;
+}
+
+.year:hover,
+.num:hover,
+.data:hover,
+.amimp:hover {
+  border: 1px solid black;
+}
+
+/* --- Positioning for inputs and labels --- */
+.year { left: 500px; top: 210px; }
+.num { left: 750px; top: 210px; }
+.data { left: 1000px; top: 210px; }
+.amimp { left: 1270px; top: 210px; }
+
+/* Additional positioning */
+.letter-number { position: fixed; left: 750px; }
+.letter-data { position: fixed; left: 1050px; }
+.amount { position: fixed; left: 1300px; }
+
+/* --- Horizontal rule styling --- */
+hr {
+  position: relative;
+  bottom: 450px;
+  left: 450px;
+  width: 1000px;
+}
+
+/* --- Labels or text near inputs --- */
+.d1, .d2, .d3, .d4, .d5 {
+  position: fixed;
+  top: 300px;
+  color: black;
+  cursor: alias;
+  text-decoration: underline;
+  transition: text-decoration 0.2s;
+}
+
+.d1 { left: 500px; }
+.d2 { left: 660px; }
+.d4 { left: 860px; }
+.d3 { left: 1030px; }
+.d5 { left: 1160px; }
+
+/* --- Content container --- */
+.content {
+  background-color: beige;
+  height: 200px;
+  width: 1000px;
+  position: fixed;
+  top: 380px;
+  left: 500px;
+  overflow-y: auto;  /* vertical scroll */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* --- Add button --- */
+.add {
+  position: fixed;
+  left: 950px;
+  top: 300px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add:hover {
+  background-color: #3282B8;
+  color: white;
+}
+
+/* --- Entry rows inside content --- */
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+  border-bottom: 1px solid #ccc;
+  width: 100%; /* ensures full width inside content */
+  box-sizing: border-box;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+/* --- Columns inside entry rows --- */
+.col {
+  width: 20%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.col5 {
+  display: flex;
+  gap: 5px;
+}
+
+/* --- Buttons inside entries --- */
+.edit-btn,
+.delete-btn {
+  margin: 0 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.edit-btn {
+  background-color: #3282B8;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: #255a8a;
+}
+
+.delete-btn {
+  background-color: crimson;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+/* --- Animations --- */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- Utility --- */
+.entry-row, input, button {
+  will-change: transform, opacity;
+}
+/* ccccccccccccccccc */
